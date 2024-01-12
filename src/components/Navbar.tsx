@@ -14,7 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { useScrollDirection } from "react-use-scroll-direction";
+import { useScrollDirection } from "../services/useScroll";
 
 interface Props {
   window?: () => Window;
@@ -26,7 +26,7 @@ const navItems = ["Home", "About", "Contact"];
 export default function Navbar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { isScrollingDown, isScrollingUp } = useScrollDirection();
+  const scrollDirection = useScrollDirection();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -59,7 +59,9 @@ export default function Navbar(props: Props) {
       <AppBar
         component="nav"
         color="warning"
-        className={`transition duration-300 ${isScrollingDown ? "-translate-y-full" : ""} ${isScrollingUp ? "opacity-50" : ""}`}
+        className={`transition duration-500 ${scrollDirection == "down" ? "-translate-y-full" : ""} 
+        ${scrollDirection == "up" ? "translate-y-0" : ""}
+        `}
       >
         <Toolbar>
           <IconButton
