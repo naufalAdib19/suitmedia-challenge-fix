@@ -59,7 +59,7 @@ export default function Navbar(props: Props) {
       <AppBar
         component="nav"
         color="warning"
-        className={`transition duration-500 ${scrollDirection == "down" ? "-translate-y-full" : ""} 
+        className={`shadow-sm transition duration-500 ${scrollDirection == "down" ? "-translate-y-full" : ""} 
         ${scrollDirection == "up" ? "translate-y-0" : ""}
         `}
       >
