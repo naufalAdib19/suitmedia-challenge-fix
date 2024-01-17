@@ -1,13 +1,9 @@
 "use client";
-import Image from "next/image";
 import Hero from "@/components/Hero/Hero";
 import TotalProductOptions from "@/components/TotalProductOptions";
 import ProductDates from "@/components/DateProductOptions";
-import { useState } from "react";
 
 export default function Home() {
-  const [productDates, setProductDates] = useState<number>(0);
-
   return (
     <div>
       <div className="hero">
@@ -16,9 +12,9 @@ export default function Home() {
       <div className="product mt-12">
         <div className="product-settings flex flex-col gap-y-3 md:flex-row md:justify-between md:items-center px-7 md:px-12 mb-12">
           <p>x of y prouducts</p>
-          <div className="flex gap-x-5">
+          <div className="flex gap-x-5 flex-col md:flex-row gap-y-5">
             <TotalProductOptions />
-            <ProductDates props={productDates} />
+            <ProductDates />
           </div>
         </div>
         <p>

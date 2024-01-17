@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useProductSettings } from "@/zustand/store";
 
-export default function ProductDates({ props }: { props: number }) {
+export default function ProductDates() {
   const productsDate = useProductSettings((state) => state.productDates);
   const updateProductDates = useProductSettings(
     (state) => state.updateProductDates
