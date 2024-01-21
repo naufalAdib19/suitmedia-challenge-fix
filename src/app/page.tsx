@@ -17,7 +17,7 @@ export default function Home() {
     setCurrentPage(value);
   };
   const { data, isLoading }: any = useProducts(currentPage);
-
+  console.log(data);
   return (
     <div>
       <div className="hero">

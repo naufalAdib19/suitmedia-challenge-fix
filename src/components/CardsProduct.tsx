@@ -5,6 +5,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import { truncateString } from "@/services/truncateStrings";
+import Image from "next/image";
 
 const bull = (
   <Box
