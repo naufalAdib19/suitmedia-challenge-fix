@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import { truncateString } from "@/services/truncateStrings";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 const bull = (
   <Box
@@ -28,6 +29,7 @@ export default function CardProduct({
 }: {
   props: propsCardProductType;
 }) {
+  const LazyImage = dynamic(() => import("@/components/LazyCardImage"));
   return (
     <Card sx={{ minWidth: 280, maxWidth: 280, minHeight: 300 }}>
       <CardContent sx={{ p: 0 }}>
